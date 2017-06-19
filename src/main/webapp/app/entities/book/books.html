@@ -1,0 +1,136 @@
+<div>
+    <h1>hello {{vm.user.login}}</h1>
+    <h2>Books</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="book.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Book
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span>Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="priice"><span>Priice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in vm.books track by book.id">
+                    <td><a ui-sref="book-detail({id:book.id})">{{book.id}}</a></td>
+                    <td>{{book.name}}</td>
+                    <td>{{book.priice}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="book-detail({id:book.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="book.edit({id:book.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="book.delete({id:book.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <p>there are in total {{vm.total[0]}} books, with a total price of : {{vm.totalPrice[0]}} euro</p>
+                  </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+    
+    <form method="post" action="https://secure.paypage.be/ncol/test/orderstandard_utf8.asp" id=form1 name=form1>
+
+
+
+<!-- Algemene parameters: zie Formulierparameters -->
+
+
+
+<input type="hidden" name="PSPID" value="tailorfittest">
+
+<input type="hidden" name="ORDERID" value="STDREF126">
+
+<input type="hidden" name="AMOUNT" value="50">
+
+<input type="hidden" name="CURRENCY" value="EUR">
+
+<input type="hidden" name="LANGUAGE" value="">
+
+<input type="hidden" name="CN" value="">
+
+<input type="hidden" name="EMAIL" value="">
+
+<input type="hidden" name="OWNERZIP" value="">
+
+<input type="hidden" name="OWNERADDRESS" value="">
+
+<input type="hidden" name="OWNERCTY" value="">
+
+<input type="hidden" name="OWNERTOWN" value="">
+
+<input type="hidden" name="OWNERTELNO" value="">
+
+
+<!-- Controle voor de betaling: zie Beveiliging: Controle voor de betaling -->
+
+<input type="hidden" name="SHASIGN" value="">
+
+<!-- Layoutinformatie: zie Look en feel van de betaalpagina -->
+
+<input type="hidden" name="TITLE" value="">
+
+<input type="hidden" name="BGCOLOR" value="">
+
+<input type="hidden" name="TXTCOLOR" value="">
+
+<input type="hidden" name="TBLBGCOLOR" value="">
+
+<input type="hidden" name="TBLTXTCOLOR" value="">
+
+<input type="hidden" name="BUTTONBGCOLOR" value="">
+
+<input type="hidden" name="BUTTONTXTCOLOR" value="">
+
+<input type="hidden" name="LOGO" value="">
+
+<input type="hidden" name="FONTTYPE" value="">
+
+
+<!-- Feedback na de betaling (post-sale): zie Transactiefeedback naar de klant -->
+
+<input type="hidden" name="ACCEPTURL" value="">
+
+<input type="hidden" name="DECLINEURL" value="">
+
+<input type="hidden" name="EXCEPTIONURL" value="">
+
+<input type="hidden" name="CANCELURL" value="">
+
+<input type="submit" value="comprar" id=submit2 name=submit2>
+
+</form> 
+</div>

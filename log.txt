@@ -1,0 +1,38 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Postgresql 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:1.5.4.RELEASE:run (default-cli) > test-compile @ postgresql >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:copy-resources (default-resources) @ postgresql ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ postgresql ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] Copying 9 resources
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-versions) @ postgresql ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (pre-unit-tests) @ postgresql ---
+[INFO] argLine set to -javaagent:C:\\Users\\Cathlene\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.7.9\\org.jacoco.agent-0.7.9-runtime.jar=destfile=C:\\Users\\Cathlene\\workspace\\postgresql\\target\\test-results\\coverage\\jacoco\\jacoco.exec -Djava.security.egd=file:/dev/./urandom -Xmx256m
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ postgresql ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 73 source files to C:\Users\Cathlene\workspace\postgresql\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ postgresql ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ postgresql ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:1.5.4.RELEASE:run (default-cli) < test-compile @ postgresql <<<
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.5.4.RELEASE:run (default-cli) @ postgresql ---
+[INFO] Attaching agents: []
